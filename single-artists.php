@@ -51,7 +51,7 @@ get_header(); ?>
                     $filmshots3 = (get_post_meta($post->ID, 'still_image_3', true) != '' ? get_post_meta($post->ID, 'still_image_3', true) : get_post_meta($post->ID, 'field_5b4e9b9544943', true));
 
                     echo '<div id="header">';
-                        echo '<h1>'.$artist_name.' - '.$post->ID.'</h1>';
+                        echo '<h1>'.$artist_name.'</h1>';
                         echo '<h2>'.$post->post_title.'<br></h2>';
                     echo '</div>';
                     echo '<div id="left_col">';
