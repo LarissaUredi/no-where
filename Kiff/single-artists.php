@@ -75,7 +75,7 @@ get_header(); ?>
                         echo '<b>Aspect Ratio: </b>'.$aspectratio.'<br>';
                         echo '<b>Awards: </b>'.$awards.'<br>';
                         echo '<b>Poster: </b><img src="'.$featured_img_url.'"/><br>';
-                        echo '<b>Poster 2:</b><img src="'.$featured_img_url2.'" alt=""/><br>';
+                        //echo '<b>Poster 2:</b><img src="'.$featured_img_url2.'" alt=""/><br>';
                         if (($filmshots1 !== '') || ($filmshots2 !== '') || ($filmshots3 !== '') ){
                             echo '<b>Shots from the film:</b><br>';
                             echo '<img height="300" width="300" src="'.$filmshots1.'"/>&nbsp;&nbsp;';
