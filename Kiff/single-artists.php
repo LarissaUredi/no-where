@@ -114,9 +114,9 @@ get_header(); ?>
                         //echo '<b>Poster 2:</b><img src="'.$featured_img_url2.'" alt=""/><br>';
                         if (($filmshots1_url !== '') || ($filmshots2_url !== '') || ($filmshots3_url !== '') ){
                             echo '<b>Shots from the film:</b><br>';
-                            echo '<img height="300" width="300" src="'.$filmshots1_url.'"/>&nbsp;&nbsp;';
-                            echo '<img height="300" width="300" src="'.$filmshots2_url.'"/>&nbsp;&nbsp;';
-                            echo '<img height="300" width="300" src="'.$filmshots3_url.'"/>';
+                            echo '<img src="'.$filmshots1_url.'"/>&nbsp;&nbsp;';
+                            echo '<img src="'.$filmshots2_url.'"/>&nbsp;&nbsp;';
+                            echo '<img src="'.$filmshots3_url.'"/>';
                         }
                         //echo '<div style="text-align: center;">Facebook | Instagram | Twitter</div>';
                     echo '</div>';

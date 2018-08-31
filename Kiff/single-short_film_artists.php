@@ -113,7 +113,7 @@ get_header(); ?>
                     // $filmshots2 = (get_post_meta($post->ID, 'still_image_2', true) != '' ? get_post_meta($post->ID, 'still_image_2', true) : get_post_meta($post->ID, 'field_5b570f5250855', true));
                     // $filmshots3 = (get_post_meta($post->ID, 'still_image_3', true) != '' ? get_post_meta($post->ID, 'still_image_3', true) : get_post_meta($post->ID, 'field_5b570f6450856', true));
 		
-		            $buytickets = (get_post_meta($post->ID, 'buy_tickets', true ) !='' ? get_post_meta($post->ID, 'buy_tickets', true) : get_post_meta($post->ID, 'buy_tickets', true));
+		            //$buytickets = (get_post_meta($post->ID, 'buy_tickets', true ) !='' ? get_post_meta($post->ID, 'buy_tickets', true) : get_post_meta($post->ID, 'buy_tickets', true));
 
                     echo '<div id="header">';
 
@@ -168,11 +168,11 @@ get_header(); ?>
 
                             echo '<b>Shots from the film:</b><br>';
 
-                            echo '<img height="300" width="300" src="'.$filmshots1_url.'"/>&nbsp;&nbsp;';
+                            echo '<img src="'.$filmshots1_url.'"/>&nbsp;&nbsp;';
 
-                            echo '<img height="300" width="300" src="'.$filmshots2_url.'"/>&nbsp;&nbsp;';
+                            echo '<img src="'.$filmshots2_url.'"/>&nbsp;&nbsp;';
 
-                            echo '<img height="300" width="300" src="'.$filmshots3_url.'"/>';
+                            echo '<img src="'.$filmshots3_url.'"/>';
 
                         }
 
