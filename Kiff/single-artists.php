@@ -25,15 +25,17 @@ get_header(); ?>
                     }
 
                     /* grab the url for the Poster image on the form */
-                    $featured_img_url_ID = get_post_meta($post->ID, 'poster', true);
+                    //$featured_img_url_ID = get_post_meta($post->ID, 'poster', true);
+                    // $featured_img_url_ID = '';
                     
-                    $image_attributes = wp_get_attachment_image_src( $attachment_id = $featured_img_url_ID );
-                    if ( $image_attributes ) {
-                         $featured_img_url = $image_attributes[0];
-                    } else {
-                        /* If not Poster is set on the form get the Featured URL of the post */
-                        $featured_img_url = get_the_post_thumbnail_url(get_the_ID(),'medium');
-                    }
+                    // $image_attributes = wp_get_attachment_image_src( $attachment_id = $featured_img_url_ID );
+                    // if ( $image_attributes ) {
+                    //      $featured_img_url = $image_attributes[0];
+                    // } else {
+                    //     /* If not Poster is set on the form get the Featured URL of the post */
+                    //     $featured_img_url = get_the_post_thumbnail_url(get_the_ID(),'medium');
+                    // }
+                    $featured_img_url = get_the_post_thumbnail_url(get_the_ID(),'medium');
                     //echo get_post_meta($post->ID, 'video', true);
                     
                     $artist_name = (get_post_meta($post->ID, 'artist_name', true) != '' ? get_post_meta($post->ID, 'artist_name', true) : get_post_meta($post->ID, 'field_5b4579bdb68c8', true));
@@ -99,6 +101,9 @@ get_header(); ?>
                         echo '<b>Category: </b> '.$strCategories.'<br>';
                         echo '<b>Run Time: </b> '.$runtime.' min<br>';
                         echo '<b>Director: </b>'.$director.'<br>';
+                        if (strpos($websiteurl, 'http://') !== false || strpos($websiteurl, 'https://') !== false) {
+                            $websiteurl = '<a target="_blank" href="'.$websiteurl.'">'.$websiteurl.'</a>';
+                        }
                         echo '<b>Web Site: </b>'.$websiteurl.'<br>';
                         echo '<b>Country: </b>'.$country.'<br>';
                         echo '<b>Rating: </b>'.$rating.'<br>';

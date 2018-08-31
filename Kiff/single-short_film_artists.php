@@ -149,6 +149,9 @@ get_header(); ?>
 
                         echo '<b>Director: </b>'.$director.'<br>';
 
+                        if (strpos($websiteurl, 'http://') !== false || strpos($websiteurl, 'https://') !== false) {
+                            $websiteurl = '<a target="_blank" href="'.$websiteurl.'">'.$websiteurl.'</a>';
+                        }
                         echo '<b>Web Site: </b>'.$websiteurl.'<br>';
 
                         echo '<b>Country: </b>'.$country.'<br>';
