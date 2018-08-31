@@ -82,13 +82,38 @@ get_header(); ?>
 
                     $awards = (get_post_meta($post->ID, 'awards', true) != '' ? get_post_meta($post->ID, 'awards', true) : get_post_meta($post->ID, 'field_5b4678d62d15b', true));
 
-                    $filmshots1 = (get_post_meta($post->ID, 'still_image_1', true) != '' ? get_post_meta($post->ID, 'still_image_1', true) : get_post_meta($post->ID, 'field_5b4e9b9544941', true));
+                    $filmshots1 = wp_get_attachment_image_src( $attachment_id = (get_post_meta($post->ID, 'still_image_1', true)));
+                    $filmshots1_url = "";
+                    if ( $filmshots1 ) {
+                        $filmshots1_url = $filmshots1[0];
+                    } else {
+                        /* If not Poster is set on the form get the Featured URL of the post */
+                        $filmshots1_url = (get_post_meta($post->ID, 'still_image_1', true) != '' ? get_post_meta($post->ID, 'still_image_1', true) : get_post_meta($post->ID, 'field_5b570f3150854', true));
+                    }
 
-                    $filmshots2 = (get_post_meta($post->ID, 'still_image_2', true) != '' ? get_post_meta($post->ID, 'still_image_2', true) : get_post_meta($post->ID, 'field_5b4e9b9544942', true));
+                    $filmshots2 = wp_get_attachment_image_src( $attachment_id = (get_post_meta($post->ID, 'still_image_2', true)));
+                    $filmshots2_url = "";
+                    if ( $filmshots2 ) {
+                        $filmshots2_url = $filmshots2[0];
+                    } else {
+                        /* If not Poster is set on the form get the Featured URL of the post */
+                        $filmshots2_url = (get_post_meta($post->ID, 'still_image_2', true) != '' ? get_post_meta($post->ID, 'still_image_2', true) : get_post_meta($post->ID, 'field_5b570f5250855', true));
+                    }
 
-                    $filmshots3 = (get_post_meta($post->ID, 'still_image_3', true) != '' ? get_post_meta($post->ID, 'still_image_3', true) : get_post_meta($post->ID, 'field_5b4e9b9544943', true));
+                    $filmshots3 = wp_get_attachment_image_src( $attachment_id = (get_post_meta($post->ID, 'still_image_3', true)));
+                    $filmshots3_url = "";
+                    if ( $filmshots3 ) {
+                        $filmshots3_url = $filmshots3[0];
+                    } else {
+                        /* If not Poster is set on the form get the Featured URL of the post */
+                        $filmshots3_url = (get_post_meta($post->ID, 'still_image_3', true) != '' ? get_post_meta($post->ID, 'still_image_3', true) : get_post_meta($post->ID, 'field_5b570f6450856', true));
+                    }
+                                        
+                    // $filmshots1 = (get_post_meta($post->ID, 'still_image_1', true) != '' ? get_post_meta($post->ID, 'still_image_1', true) : get_post_meta($post->ID, 'field_5b570f3150854', true));
+                    // $filmshots2 = (get_post_meta($post->ID, 'still_image_2', true) != '' ? get_post_meta($post->ID, 'still_image_2', true) : get_post_meta($post->ID, 'field_5b570f5250855', true));
+                    // $filmshots3 = (get_post_meta($post->ID, 'still_image_3', true) != '' ? get_post_meta($post->ID, 'still_image_3', true) : get_post_meta($post->ID, 'field_5b570f6450856', true));
 		
-		 $buytickets = (get_post_meta($post->ID, 'buy_tickets', true ) !='' ? get_post_meta($post->ID, 'buy_tickets', true) : get_post_meta($post->ID, 'buy_tickets', true));
+		            $buytickets = (get_post_meta($post->ID, 'buy_tickets', true ) !='' ? get_post_meta($post->ID, 'buy_tickets', true) : get_post_meta($post->ID, 'buy_tickets', true));
 
                     echo '<div id="header">';
 
@@ -136,15 +161,15 @@ get_header(); ?>
 
                         echo '<b>Awards: </b>'.$awards.'<br>';
 
-                        if (($filmshots1 !== '') || ($filmshots2 !== '') || ($filmshots3 !== '') ){
+                        if (($filmshots1_url !== '') || ($filmshots2_url !== '') || ($filmshots3_url !== '') ){
 
                             echo '<b>Shots from the film:</b><br>';
 
-                            echo '<img height="300" width="300" src="'.$filmshots1.'"/>&nbsp;&nbsp;';
+                            echo '<img height="300" width="300" src="'.$filmshots1_url.'"/>&nbsp;&nbsp;';
 
-                            echo '<img height="300" width="300" src="'.$filmshots2.'"/>&nbsp;&nbsp;';
+                            echo '<img height="300" width="300" src="'.$filmshots2_url.'"/>&nbsp;&nbsp;';
 
-                            echo '<img height="300" width="300" src="'.$filmshots3.'"/>';
+                            echo '<img height="300" width="300" src="'.$filmshots3_url.'"/>';
 
                         }
 
