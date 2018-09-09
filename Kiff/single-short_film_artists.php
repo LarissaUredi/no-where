@@ -81,6 +81,8 @@ get_header(); ?>
                     $aspectratio = (get_post_meta($post->ID, 'aspect_ratio', true) != '' ? get_post_meta($post->ID, 'aspect_ratio', true) : get_post_meta($post->ID, 'field_5b4678ce2d15a', true));
 
                     $awards = (get_post_meta($post->ID, 'awards', true) != '' ? get_post_meta($post->ID, 'awards', true) : get_post_meta($post->ID, 'field_5b4678d62d15b', true));
+                    $day = (get_post_meta($post->ID, 'day', true) != '');
+                    $time = (get_post_meta($post->ID, 'time', true) != '');
 
                     $filmshots1 = wp_get_attachment_image_src( $attachment_id = (get_post_meta($post->ID, 'still_image_1', true)));
                     $filmshots1_url = "";
