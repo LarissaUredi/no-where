@@ -124,7 +124,7 @@ get_header(); ?>
                     echo '</div>';
 
                     echo '<div id="left_col">';
-		     echo '<img class="lPadding-15" src="'.$featured_img_url.'"/><br>';
+		                echo '<img class="lPadding-15" src="'.$featured_img_url.'"/><br>';
 
                         //echo '<iframe width="800" height="500" src="'.get_post_meta($post->ID, 'field_5b4579d1b68c9', true).'?rel=0" frameborder="0"; encrypted-media" allowfullscreen></iframe>';
 
@@ -134,15 +134,13 @@ get_header(); ?>
 
                         echo '<div style="padding-left: 10px;">'.$post->post_content.'</div>';
 			
-		     //echo '<a class="text-white lPadding-15" href="'.$buytickets.'"> Buy Tickets </a>';
+		                //echo '<a class="text-white lPadding-15" href="'.$buytickets.'"> Buy Tickets </a>';
+                    echo '</div>';
 
-				     
-                        echo '</div>';
-
-                        echo '</div>';
-
-                        echo '<div id="right_col" class="text-white">';
-
+                    echo '</div>';
+                    echo '<div id="right_col" class="text-white">';
+                        echo '<h4>'.$day.' | '.$time.'</h4>';
+                        echo '<p class="returnToSchedule"><a href="http://www.kansasfilm.com/schedule">Return to Schedule</a></p>';
                         echo '<b>Category: </b> '.$strCategories.'<br>';
 
                         echo '<b>Run Time: </b> '.$runtime.' min<br>';
@@ -160,7 +158,7 @@ get_header(); ?>
 
                         echo '<b>Language: </b>'.$language.'<br>';
 
-                        echo '<b>Aspect Ratio: </b>'.$aspectratio.'<br>';
+                        //echo '<b>Aspect Ratio: </b>'.$aspectratio.'<br>';
 
                         echo '<b>Awards: </b>'.$awards.'<br>';
 

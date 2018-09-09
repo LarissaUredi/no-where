@@ -48,6 +48,8 @@ get_header(); ?>
                     $language = (get_post_meta($post->ID, 'language', true) != '' ? get_post_meta($post->ID, 'language', true) : get_post_meta($post->ID, 'field_5b4678c62d159', true));
                     $aspectratio = (get_post_meta($post->ID, 'aspect_ratio', true) != '' ? get_post_meta($post->ID, 'aspect_ratio', true) : get_post_meta($post->ID, 'field_5b4678ce2d15a', true));
                     $awards = (get_post_meta($post->ID, 'awards', true) != '' ? get_post_meta($post->ID, 'awards', true) : get_post_meta($post->ID, 'field_5b4678d62d15b', true));
+                    $day = (get_post_meta($post->ID, 'awards', true) != '');
+                    $time = (get_post_meta($post->ID, 'awards', true) != '');
                     
                     $filmshots1_image_id = get_post_meta($post->ID, 'still_image_1', true);
                     $filmshots1 = wp_get_attachment_image_src( $attachment_id = $filmshots1_image_id);
@@ -98,6 +100,8 @@ get_header(); ?>
                         echo '</div>';
                     echo '</div>';
                     echo '<div id="right_col" class="text-white">';
+                        echo '<h4>'.$day.' | '.$time.'</h4>';
+                        echo '<p class="returnToSchedule"><a href="http://www.kansasfilm.com/schedule">Return to Schedule</a></p>';
                         echo '<b>Category: </b> '.$strCategories.'<br>';
                         echo '<b>Run Time: </b> '.$runtime.' min<br>';
                         echo '<b>Director: </b>'.$director.'<br>';
@@ -108,7 +112,7 @@ get_header(); ?>
                         echo '<b>Country: </b>'.$country.'<br>';
                         echo '<b>Rating: </b>'.$rating.'<br>';
                         echo '<b>Language: </b>'.$language.'<br>';
-                        echo '<b>Aspect Ratio: </b>'.$aspectratio.'<br>';
+                        //echo '<b>Aspect Ratio: </b>'.$aspectratio.'<br>';
                         echo '<b>Awards: </b>'.$awards.'<br>';
                         echo '<b>Poster: </b><img src="'.$featured_img_url.'"/><br>';
                         //echo '<b>Poster 2:</b><img src="'.$featured_img_url2.'" alt=""/><br>';
