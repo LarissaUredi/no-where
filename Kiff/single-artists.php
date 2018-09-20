@@ -48,9 +48,12 @@ get_header(); ?>
                     $language = (get_post_meta($post->ID, 'language', true) != '' ? get_post_meta($post->ID, 'language', true) : get_post_meta($post->ID, 'field_5b4678c62d159', true));
                     $aspectratio = (get_post_meta($post->ID, 'aspect_ratio', true) != '' ? get_post_meta($post->ID, 'aspect_ratio', true) : get_post_meta($post->ID, 'field_5b4678ce2d15a', true));
                     $awards = (get_post_meta($post->ID, 'awards', true) != '' ? get_post_meta($post->ID, 'awards', true) : get_post_meta($post->ID, 'field_5b4678d62d15b', true));
-                    $day = (get_post_meta($post->ID, 'day', true) != '');
-                    $time = (get_post_meta($post->ID, 'time', true) != '');
-                    
+                     $day = (get_post_meta($post->ID, 'day', true) != '' ? get_post_meta($post->ID, 'day', true) : get_post_meta($post->ID, 'field_5b93d6a11c6c6', true));
+                    $time = (get_post_meta($post->ID, 'time', true) != '' ? get_post_meta($post->ID, 'time', true) : get_post_meta($post->ID, 'field_5b93d6f41c6c7', true));
+			$date_day = substr($day, -2);
+			$date_month = substr($day, -4, 2);
+			$date_year = substr($day, 0, 4);
+            
                     $filmshots1_image_id = get_post_meta($post->ID, 'still_image_1', true);
                     $filmshots1 = wp_get_attachment_image_src( $attachment_id = $filmshots1_image_id);
                     $filmshots1_url = "";
@@ -100,7 +103,7 @@ get_header(); ?>
                         echo '</div>';
                     echo '</div>';
                     echo '<div id="right_col" class="text-white">';
-                        echo '<h4>'.$day.' | '.$time.'</h4>';
+                        echo '<h4>'.$date_month.'/'.$date_day.'/'.$date_year.' | '.$time.'</h4>';
                         echo '<p class="returnToSchedule"><a href="http://www.kansasfilm.com/schedule">Return to Schedule</a></p>';
                         echo '<b>Category: </b> '.$strCategories.'<br>';
                         echo '<b>Run Time: </b> '.$runtime.' min<br>';
