@@ -168,11 +168,11 @@ get_header(); ?>
 
                             echo '<b>Shots from the film:</b><br>';
 
-                            echo '<img src="'.$filmshots1_url.'"/>&nbsp;&nbsp;';
+                            echo '<img class="stillImage" src="'.$filmshots1_url.'"/>&nbsp;&nbsp;';
 
-                            echo '<img src="'.$filmshots2_url.'"/>&nbsp;&nbsp;';
+                            echo '<img class="stillImage" src="'.$filmshots2_url.'"/>&nbsp;&nbsp;';
 
-                            echo '<img src="'.$filmshots3_url.'"/>';
+                            echo '<img class="stillImage" src="'.$filmshots3_url.'"/>';
 
                         }
 
